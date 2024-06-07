@@ -16,6 +16,8 @@ public class ProductPage extends BasePage {
     private WebElement btnRemoveSauceLabsBackpack;
     @FindBy (id = "add-to-cart-sauce-labs-backpack")
     private WebElement btnAddToChartSauceLabsBackpack;
+    @FindBy(id = "shopping_cart_container")
+    private WebElement cart;
 
     public boolean verifyTittleProductSauceLabsBackpack(){
         return isDisplayed(titleProductSauceLabsBackpack);
@@ -35,5 +37,9 @@ public class ProductPage extends BasePage {
         scrollIntoView(btnAddToChartSauceLabsBackpack);
         waitForElementClickable(btnAddToChartSauceLabsBackpack);
         click(btnAddToChartSauceLabsBackpack);
+    }
+    public void clickCart(){
+        waitForElementClickable(cart);
+        click(cart);
     }
 }
