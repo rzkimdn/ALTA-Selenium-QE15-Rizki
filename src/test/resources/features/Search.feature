@@ -12,5 +12,5 @@ Feature: Search Test
     And Click chart button
     Then Verify the product saucelabs onesie and all the things t-shirt red is on the checkout page
     And Click remove button on the product all the things t-shirt red
-#    And Verify product all the things t-shirt red is removed on the checkout page
+    And Verify product all the things t-shirt red is removed on the checkout page
     Then Click Continue Shopping

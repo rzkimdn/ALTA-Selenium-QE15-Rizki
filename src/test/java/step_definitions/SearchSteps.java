@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pageObject.SearchPage;
 import org.junit.Assert;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 
 public class SearchSteps {
@@ -52,9 +53,17 @@ public class SearchSteps {
         searchSteps.clickRemoveButton();
     }
 
+    public boolean verifyRemoveProduct(){
+        try {
+            searchSteps.verifyRemoveProductAllTheThingsTShirtRed();
+            return true;
+        }catch (TimeoutException e){
+            return false;
+        }
+    }
     @And("Verify product all the things t-shirt red is removed on the checkout page")
     public void verifyProductAllTheThingsTShirtRedIsRemovedOnTheCheckoutPage() {
-        Assert.assertTrue(searchSteps.verifyRemoveProductAllTheThingsTShirtRed());
+        Assert.assertFalse(verifyRemoveProduct());
     }
 
     @Then("Click Continue Shopping")

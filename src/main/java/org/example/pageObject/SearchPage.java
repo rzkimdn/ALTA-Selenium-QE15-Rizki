@@ -74,7 +74,7 @@ public class SearchPage extends BasePage  {
         click(btnRemoveAllTheThingsTShirtRed);
     }
     public boolean verifyRemoveProductAllTheThingsTShirtRed(){
-        return !isDisplayed(tittleProductAllTheThingsTShirtRed);
+        return isDisplayed(tittleProductAllTheThingsTShirtRed);
     }
     public void clickContinueShopping(){
         scrollIntoView(btnContinueShopping);
